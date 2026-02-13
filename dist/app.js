@@ -8,6 +8,8 @@ const cors_1 = __importDefault(require("cors"));
 const auth_routes_1 = __importDefault(require("./routes/auth.routes"));
 const category_routes_1 = __importDefault(require("./routes/category.routes"));
 const product_routes_1 = __importDefault(require("./routes/product.routes"));
+const bank_routes_1 = __importDefault(require("./routes/bank.routes"));
+const transaction_routes_1 = __importDefault(require("./routes/transaction.routes"));
 const path_1 = __importDefault(require("path"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
@@ -17,6 +19,8 @@ app.use("/uploads", express_1.default.static(path_1.default.join(__dirname, "../
 app.use("/api/auth", auth_routes_1.default);
 app.use("/api/categories", category_routes_1.default);
 app.use("/api/products", product_routes_1.default);
+app.use("/api/banks", bank_routes_1.default);
+app.use("/api/transactions", transaction_routes_1.default);
 app.get("/", (reg, res) => {
     res.send("Sporton backend API is running");
 });
